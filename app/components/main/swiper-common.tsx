@@ -24,14 +24,14 @@ const SwiperCommon = ({ items, mainTitle }: IProps) => {
             <h2 className="text-white mb-2">{mainTitle}</h2>
             <div className="line mt-0 mb-4 bg-white h-0.5 opacity-50"></div>
             <Swiper
-                slidesPerView={7}
+                slidesPerView={3}
                 spaceBetween={30}
                 navigation={true}
                 modules={[Pagination, Navigation]}
                 className="mySwiper text-white"
             >
                 {items.map((item, index) => (
-                    <SwiperSlide key={index}> <FeaturedItem item={item} height="full" /></SwiperSlide>
+                    <SwiperSlide key={index}> <FeaturedItem item={item} /></SwiperSlide>
                 ))}
             </Swiper>
         </div>
