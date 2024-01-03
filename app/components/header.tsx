@@ -1,69 +1,94 @@
 import Image from "next/image"
+import SearchIcon from "./icons/search"
+import Link from "next/link"
+
 
 export const Header = () => {
+    const categories = [
+        {
+            title: "AI Models",
+            icon: "/3d_outline.svg"
+        },
+        {
+            title: "Art & Illustrations",
+            icon: "/art_pallette_outline.svg"
+        },
+        {
+            title: "Logos & Icons",
+            icon: "/logos_icons_outline.svg"
+        },
+        {
+            title: "Graphics & Design",
+            icon: "/image_outline.svg"
+        },
+        {
+            title: "Productivity & Writing",
+            icon: "/draw_outline.svg"
+        },
+        {
+            title: "Marketing & Business",
+            icon: "/briefcase_outline.svg"
+        },
+        {
+            title: "Photography",
+            icon: "/camera_outline.svg"
+        },
+        {
+            title: "Games & 3D",
+            icon: "/controller_outline.svg"
+        },
+    ]
     return (
-        <nav className="w-full shadow-md z-10 border-b border-solid border-gray-700 h-105 bg-customBackground">
-            {/* <div className="flex items-center h-16 justify-between w-full px-8 py-2 md:py-4 max-w-1400 mx-auto ">
-                <div className="flex items-center border-0 p-0 pl-0 cursor-pointer">
-                    <img src='https://promptbase.com/assets/img/logo/logo_50_webp.webp' className="h-6 w-6 mr-2 relative"></img>
-                    <span className="text-2xl font-bold text-white">
-                        PromptBase
-                    </span>
-                </div>
-                <div className="w-full h-8 relative mr-4">
-                    <div className="flex w-full top-0 left-0 z-4 justify-center">
-                        <input
-                            type="text"
-                            placeholder="Search Prompts"
-                            className="rounded-l-md h-8 whitespace-no-wrap relative m-0 text-decoration-none overflow-hidden bg-transparent border-0 outline-none cursor-text p-2 antialiased text-white bg-gray-700 text-xs"
-                        />
-                        <div className="flex items-center justify-center h-8 rounded-r-lg w-12 p-0 opacity-100 transition duration-300 bg-gray-700">
-                            <img src="https://promptbase.com/assets/icons/search.svg" className="w-6 h-6 filter invert" />
-                        </div>
-                    </div>
-                </div>
-                <div className="text-white">
-                    ...
-                </div>
-            </div> */}
-
-            <div className="flex items-center h-16 justify-between w-full px-8 py-2 md:py-4 max-w-1400 mx-auto">
+        <nav className="w-full shadow-lg z-10 border-b border-solid border-gray-700 bg-custom-color">
+            <div className="container items-center justify-between w-full mx-auto pb-2">
                 {/* main nav*/}
                 <div className="flex space-x-3 items-center">
                     <div className="shrink-0 flex items-center ">
-                        <Image src='https://promptbase.com/assets/img/logo/logo_50_webp.webp'
+                        <Image src='/logo.webp'
                             className="h-6 w-6 mr-2 relative"
                             height={40}
                             width={40}
-                            alt='logo'></Image>
-                        <span className="text-2xl font-bold text-white">
+                            alt='logo' />
+                        <span className="text-20 font-bold text-white">
                             PromptBase
                         </span>
                     </div>
                     {/* div search */}
-                    <div className="w-full ">
-                        <div className="bg-slate-600 flex justify-between rounded-l-md pl-2">
+                    <div className="w-full text-white">
+                        <div className=" bg-input-color flex justify-between rounded-md px-2 h-8 items-center">
                             <input
                                 type="text"
                                 placeholder="Search Prompts"
-                                className="bg-transparent w-full "
+                                className="bg-transparent w-full text-sm focus:outline-0"
                             />
-                            <div className="flex items-center justify-center h-8 rounded-r-lg w-12 p-0 opacity-100 transition duration-300 bg-gray-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                                </svg>
-
-                            </div>
+                            <SearchIcon />
                         </div>
                     </div>
-                    <div className="shrink-0">
-                        div 1-3
+                    <div className="shrink-0 flex items-center justify-evenly text-white text-14">
+                        <ul className="shrink-0 flex items-center ">
+                            <Link href="/marketplace" className="m-4">Marketplace</Link>
+                            <Link href="/generate" className="m-4">Generate</Link>
+                            <Link href="/hire" className="m-4">Hire</Link>
+                            <Link href="/login" className="m-4">Login</Link>
+                            <Link href="/sell" className="m-4">Sell</Link>
+                        </ul>
                     </div>
                 </div>
 
                 {/* sub nav */}
-                <div>
-                    div 2
+                <div className="flex items-center text-xs justify-evenly">
+                    <div className="flex items-center text-xs">
+                        {categories.map((category, index) => (
+                            <div key={index} className="flex items-center text-xs ">
+                                <Image src={category.icon}
+                                    className="h-6 w-6 mr-2 relative filter brightness-0 invert"
+                                    height={40}
+                                    width={40}
+                                    alt='logos' />
+                                <span className="text-white mr-6 text-xs"> {category.title}</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </nav >

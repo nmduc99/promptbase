@@ -1,0 +1,59 @@
+.swiper {
+    width: 100% !important;
+    margin-top: 12px !important;
+    margin-bottom: 12px !important;
+
+}
+
+.swiper-slide {
+    width: 240px !important;
+    height: 120px !important;
+    margin-right: 16px !important;
+}
+
+/* .swiper-image {
+    width: 240px !important;
+    height: 160px !important;
+} */
+
+.wrapper-youtube {
+    height: 400px;
+}
+
+.swiper-button-prev {
+    background-color: rgba(14, 13, 13, 0.705);
+    height: 100% !important;
+    width: 60px !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin-top: 0 !important;
+    border-radius: 10px !important;
+
+}
+
+.swiper-button-prev::after {
+    font-size: 30px !important;
+}
+
+.swiper-button-next {
+    background-color: rgba(14, 13, 13, 0.705);
+    height: 100% !important;
+    width: 60px !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin-top: 0 !important;
+    border-radius: 10px !important;
+
+}
+
+.swiper-button-next::after {
+    font-size: 30px !important;
+}
+
+.swiper-common {
+    padding-left: 64px !important;
+    /* padding-top: 48px !important; */
+    /* padding-bottom: 48px !important; */
+    max-width: 2000px !important;
+    margin: auto !important;
+}
